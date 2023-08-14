@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --muted-background: #f8f9fa;
+
+    .dark {
+      --background: #2a3135;
+      --muted-background: #42484b;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background;
+  }
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  line-height: 1.8;
+  word-wrap: break-word;
+}
+
+a {
+  color: #4baedf;
+
+  @apply underline;
+
+  &:visited {
+    color: #c4b5fd;
+  }
+}
