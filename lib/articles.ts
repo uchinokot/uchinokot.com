@@ -4,6 +4,8 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import gfm from "remark-gfm"
 import html from "remark-html";
+import transformImgToFigure from "./transformImgToFigure";
+
 
 export interface ArticleData {
   id: string;
@@ -56,6 +58,7 @@ export async function getArticleData(slug: string) {
   const processedContent = await remark()
     .use(html)
     .use(gfm)
+    .use(transformImgToFigure)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
