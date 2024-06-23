@@ -38,4 +38,8 @@ a {
   &:visited {
     color: #c4b5fd;
   }
+
+  &:hover {
+    @apply opacity-70;
+  }
 }
